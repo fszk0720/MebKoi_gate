@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>サークル入場チケット</title>
+  <link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1 class="title">サークル入場チケット</h1>
+
+    <!-- サークル情報表示 -->
+    <div class="card">
+      <h2>サークル情報</h2>
+
+      <p><strong>サークル名：</strong><span id="circleName"></span></p>
+      <p><strong>PN：</strong><span id="pn"></span></p>
+      <p><strong>スペース番号：</strong><span id="space"></span></p>
+    </div>
+
+    <!-- チケット表示 -->
+    <div class="card" id="ticketArea">
+      <h2>チケット</h2>
+      <p id="ticketStatus">未もぎ取り</p>
+      <button id="mogitoriBtn" class="btn">もぎ取る</button>
+    </div>
+
+    <!-- もぎ取り後の表示 -->
+    <div class="card hidden" id="doneArea">
+      <h2>入場済み</h2>
+      <p>このチケットは既にもぎ取られています。</p>
+    </div>
+
+  </div>
+
+  <script src="ticket.js"></script>
+</body>
+</html>

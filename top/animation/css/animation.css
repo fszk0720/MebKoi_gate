@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: "Yu Mincho", serif;
+}
+
+/* 白背景（最背面にして、最後にフェードアウト） */
+#white-bg {
+  position: fixed;
+  inset: 0;
+  background: white;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1.5s ease;
+}
+
+/* シーン（中央配置） */
+.scene {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;                  /* JS で 1 にする */
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 1.5s ease; /* シーン全体のフェード用 */
+}
+
+/* 縦書き（最前面） */
+.vertical-text {
+  writing-mode: vertical-rl;
+  font-size: 20px;
+  opacity: 0;  /* JS で 1 にする */
+  position: relative;
+  z-index: 30;
+  transition: opacity 1.5s ease, filter 0.8s ease, transform 0.8s ease;
+}
+
+/* 一文字ずつ表示する用 */
+.char-by-char span {
+  opacity: 0;
+  display: inline-block;
+  position: relative;
+  z-index: 30;
+  transition: opacity 0.8s ease, filter 1s ease, transform 1s ease;
+}
+
+/* 丸画像（文字より後ろ） */
+.circle-img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0;  /* JS で 1 にする */
+  z-index: 20;
+  transition: opacity 1.5s ease, filter 1s ease, transform 1.5s ease;
+}
+
+/* 画像の位置 */
+.pos1 { top: 10%; right: 10%; }
+.pos2 { top: 40%; left: 10%; }
+.pos3 { bottom: 10%; right: 15%; }
+
+/* ロゴ（文字と同じレイヤー） */
+#logo {
+  width: 350px;
+  opacity: 0;  /* JS で 1 にする */
+  position: relative;
+  z-index: 30;
+  transition: opacity 1s ease, filter 0.8s ease, transform 0.8s ease;
+}
+
+/* 溶けるエフェクト（文字・画像・ロゴ共通） */
+.melt {
+  opacity: 0 !important;
+  filter: blur(20px);
+  transform: scale(1.1);
+}

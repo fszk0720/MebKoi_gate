@@ -1,0 +1,164 @@
+/* ============================
+   全画面黒背景
+============================ */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* 花びらレイヤー */
+#sakura-layer,
+#ripple-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ============================
+   花びら（中央に着地）
+============================ */
+.sakura {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -90vh, 0);
+  animation: sakuraFall 6s linear forwards;
+  transform-origin: center;
+}
+
+@keyframes sakuraFall {
+  0%   { transform: translate3d(-50%, -90vh, 0) rotateZ(-90deg); }
+  25%  { transform: translate3d(-50%, -70vh, 12px) rotateZ(0deg); }
+  50%  { transform: translate3d(-50%, -50vh, 0) rotateZ(90deg); }
+  75%  { transform: translate3d(-50%, -30vh, -12px) rotateZ(180deg); }
+  100% { transform: translate3d(-50%, -10vh, 0) rotateZ(270deg); }
+}
+
+/* ============================
+   波紋
+============================ */
+.ripple {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 50%;
+  transform: translate3d(-50%, -8vh, 0) scale(0.2);
+  opacity: 0.9;
+
+  animation:
+    rippleAppear 1.0s ease-out forwards,
+    rippleWobble 2.4s ease-in-out infinite 1.0s;
+}
+
+@keyframes rippleAppear {
+  0%   { transform: translate3d(-50%, -8vh, 0) scale(0.2); }
+  100% { transform: translate3d(-50%, -8vh, 0) scaleX(3.4) scaleY(0.45); }
+}
+
+@keyframes rippleWobble {
+  0%   { transform: translate3d(-50%, -8vh, 0) scaleX(3.4) scaleY(0.45); }
+  50%  { transform: translate3d(-50%, -8vh, 0) scaleX(3.55) scaleY(0.43); }
+  100% { transform: translate3d(-50%, -8vh, 0) scaleX(3.4) scaleY(0.45); }
+}
+
+/* ============================
+   ローディングバー
+============================ */
+#loading-wrapper {
+  position: absolute;
+  bottom: calc(50% - 8vh - 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 5px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 15px;
+}
+
+#loading-bar {
+  height: 100%;
+  width: 0%;
+  background: white;
+  transition: width 0.3s linear;
+}
+
+#loading-text {
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ============================
+   障子アニメーション
+============================ */
+#shoji {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  z-index: 20000;
+}
+
+.shoji-left {
+  width: 50%;
+  background-image: url("../img/shoji1.png");
+  background-size: cover;
+
+  /* ★ 修正：画像の右側を見せる */
+  background-position: right center;
+
+  transition: transform 1s ease-in-out;
+}
+
+.shoji-right {
+  width: 50%;
+  background-image: url("../img/shoji2.png");
+  background-size: cover;
+
+  /* ★ 修正：画像の左側を見せる */
+  background-position: left center;
+
+  transition: transform 1s ease-in-out;
+}
+
+/* 初期位置：画面外 */
+.shoji-left {
+  transform: translateX(-100%);   /* ←右から入る */
+}
+
+.shoji-right {
+  transform: translateX(100%);  /* ←左から入る */
+}
+
+/* 閉じる（中央へ） */
+#shoji.close .shoji-left {
+  transform: translateX(0);
+}
+
+#shoji.close .shoji-right {
+  transform: translateX(0);
+}
+
+/* 開く（元の位置へ戻る） */
+#shoji.open .shoji-left {
+  transform: translateX(-100%);
+}
+
+#shoji.open .shoji-right {
+  transform: translateX(100%);
+}

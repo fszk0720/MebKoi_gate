@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>カウントダウン</title>
+  <link rel="stylesheet" href="./countdown.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="./img/logo.png" class="logo-small">
+      <div class="header-text">
+        <div>年越し父水Webオンリーイベント</div>
+        <div>in とらのあなマルシェ</div>
+        <div class="main-title">目吹く恋の花水木</div>
+        <div>開催期間：2025/12/31 22:00〜2026/1/2 21:59</div>
+      </div>
+    </div>
+  </header>
+
+  <div id="countdown-screen" class="hidden">
+
+    <div class="visual-wrapper">
+      <div class="main-bg">
+        <img src="./img/main-visual.png" class="main-visual">
+        <div id="countdown-text" class="countdown"></div>
+      </div>
+    </div>
+
+    <div class="wait-message">開催までお待ちください</div>
+  </div>
+
+  <footer class="site-footer">
+    2025-2026 目吹く恋の花水木 実行委員会
+  </footer>
+
+  <!-- 黒フェード＋③②① -->
+  <div id="blackout" class="hidden">
+    <div id="countdown-big"></div>
+  </div>
+
+  <!-- 障子アニメーション -->
+  <div id="shoji" class="hidden">
+    <div class="shoji-left"></div>
+    <div class="shoji-right"></div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

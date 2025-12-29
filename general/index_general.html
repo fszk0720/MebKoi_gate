@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>一般参加者チケット</title>
+  <link rel="stylesheet" href="./ticket.css">
+  <script src="./ticket.js" defer></script>
+</head>
+<body>
+  <h1>一般参加者チケット</h1>
+  <div id="opening">✨ ローディング中... ✨</div>
+
+  <!-- チケット本体 -->
+  <div id="ticket" class="ticket-wrapper">
+    <div class="left">
+      <img src="illustration_left.png" alt="左側イラスト">
+    </div>
+    <div class="right">
+      <img src="illustration_right.png" alt="右側イラスト">
+    </div>
+  </div>
+  <div id="ticketText">一般参加者チケット</div>
+
+  <!-- 案内メッセージ -->
+  <div id="message">👉 2秒後に表示：タップ／クリックしてね！</div>
+
+  <!-- 結果表示 -->
+  <div id="result"></div>
+
+  <!-- テスト用リセットボタン -->
+  <button onclick="resetTicketFlag()" style="margin-top:20px;">
+    🔄 入場履歴をリセット（テスト用）
+  </button>
+</body>
+</html>

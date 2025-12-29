@@ -1,0 +1,213 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+  background-image: url("../img/hoshi_washi_texture.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ヘッダー */
+.site-header {
+  width: 100%;
+  background: rgb(255, 252, 244);
+  background-image: url("../img/hoshi_washi_texture.png");
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  font-family: "Noto Serif JP", serif;
+
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-small {
+  height: 60px;
+}
+
+.header-text {
+  color: #1b2a52;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-text .main-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* main */
+.main {
+  flex: 1;
+  max-width: 600px;
+  margin: 120px auto 60px;
+  padding: 20px;
+  background: rgba(253,253,253,0.9);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* サークル情報 */
+.circle-info {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.circle-info p {
+  margin: 6px 0;
+}
+
+/* チケット */
+.ticket-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.left, .right {
+  position: relative;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.left img, .right img {
+  display: block;
+  height: 150px;
+}
+
+/* もぎりアニメーション（左右両方飛ぶ） */
+.torn .left {
+  transform: translateX(-200px) rotate(-10deg);
+  opacity: 0;
+}
+
+.torn .right {
+  transform: translateX(200px) rotate(10deg);
+  opacity: 0;
+}
+
+/* 右側 overlay（縦書き） もぎり前 */
+.ticket-info-overlay-right {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  color: #0a095c;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6);
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+/* もぎり後に表示する右側画像用 overlay（見た目は同じ） */
+.ticket-info-overlay-after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  color: #0a095c;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+/* もぎり後に “元々テキストがあった位置” に差し込む右側画像の枠 */
+.after-ticket-right {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.after-ticket-right img {
+  height: 150px;
+}
+
+#ticketText {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#result {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+#result img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* フッター */
+.site-footer {
+  width: 100%;
+  background: rgba(133, 0, 66, 0.9);
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  color: #f3fdff;
+  font-family: "Noto Serif JP", serif;
+
+}
+
+/* ============================
+   桜エフェクト（一般と同じ）
+============================ */
+.sakura-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.sakura {
+  position: absolute;
+  animation-name: sakura-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotateZ(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-40vw, 110vh, 0) rotateZ(360deg);
+    opacity: 0;
+  }
+}

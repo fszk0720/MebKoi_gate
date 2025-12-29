@@ -1,0 +1,204 @@
+/* ============================
+   全体
+============================ */
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff7c8;
+  font-family: "Noto Serif JP", serif;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* ============================
+   ヘッダー
+============================ */
+.site-header {
+  width: 100%;
+  background: rgb(255, 252, 244);
+  background-image: url("./img/hoshi_washi_texture.png");
+  background-size: cover;
+  background-position: center;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-small {
+  height: 60px;
+  width: auto;
+}
+
+.header-text {
+  text-align: left;
+  color: #1b2a52;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.header-text .main-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* ============================
+   メインエリア（main 全体の背景）
+============================ */
+#countdown-screen {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background-image: url("./img/hoshi_washi_texture.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ============================
+   main画像＋カウントダウン
+============================ */
+.visual-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.main-visual {
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 12px;
+  display: block;
+}
+
+.countdown {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1b2a52;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.wait-message {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b2a52;
+}
+
+
+/* ============================
+   フッター
+============================ */
+.site-footer {
+  width: 100%;
+  background: rgba(133, 0, 66, 0.9);
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #f3fdff;
+}
+
+
+/* ============================
+   黒フェード
+============================ */
+#blackout {
+  position: fixed;
+  inset: 0;
+  background: black;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#countdown-big {
+  font-size: 120px;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* ============================
+   障子アニメーション
+============================ */
+#shoji {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  z-index: 20000;
+}
+
+.shoji-left {
+  width: 50%;
+  background-image: url("./img/shoji1.png");
+  background-size: cover;
+
+  /* ★ 修正：画像の右側を見せる */
+  background-position: right center;
+
+  transition: transform 1s ease-in-out;
+}
+
+.shoji-right {
+  width: 50%;
+  background-image: url("./img/shoji2.png");
+  background-size: cover;
+
+  /* ★ 修正：画像の左側を見せる */
+  background-position: left center;
+
+  transition: transform 1s ease-in-out;
+}
+
+/* 初期位置：画面外 */
+.shoji-left {
+  transform: translateX(-100%);   /* ←右から入る */
+}
+
+.shoji-right {
+  transform: translateX(100%);  /* ←左から入る */
+}
+
+/* 閉じる（中央へ） */
+#shoji.close .shoji-left {
+  transform: translateX(0);
+}
+
+#shoji.close .shoji-right {
+  transform: translateX(0);
+}
+
+/* 開く（元の位置へ戻る） */
+#shoji.open .shoji-left {
+  transform: translateX(-100%);
+}
+
+#shoji.open .shoji-right {
+  transform: translateX(100%);
+}

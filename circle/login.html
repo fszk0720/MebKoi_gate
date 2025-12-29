@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>サークル入場認証</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1 class="title">サークル入場認証</h1>
+
+    <div class="card">
+
+      <p>スペース番号と共通パスワードを入力してください。</p>
+
+      <label>スペース番号</label>
+      <input type="text" id="space" placeholder="例：あ01">
+
+      <label>パスワード</label>
+      <input type="password" id="password" placeholder="パスワードを入力">
+
+      <button id="loginBtn" class="btn">認証する</button>
+
+      <p id="error" class="error"></p>
+
+    </div>
+
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

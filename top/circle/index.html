@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>サークル入場チケット</title>
+  <link rel="stylesheet" href="./ticket.css">
+  <script src="./ticket.js" defer></script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="./img/logo.png" class="logo-small">
+      <div class="header-text">
+        <div>年越し父水Webオンリーイベント</div>
+        <div>in とらのあなマルシェ</div>
+        <div class="main-title">目吹く恋の花水木</div>
+        <div>開催期間：2025/12/31 22:00〜2026/1/2 21:59</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 桜コンテナ -->
+  <div class="sakura-container"></div>
+
+  <main class="main">
+
+    <h1 class="page-title">サークル入場チケット</h1>
+
+    <!-- もぎり前のテキスト（もぎり後に消す） -->
+    <div class="circle-info">
+      <p><strong>サークル名：</strong><span id="circleName"></span></p>
+      <p><strong>PN：</strong><span id="pn"></span></p>
+      <p><strong>スペース番号：</strong><span id="space"></span></p>
+    </div>
+
+    <!-- チケット本体（もぎり前） -->
+    <div id="ticket" class="ticket-wrapper">
+
+      <div class="left">
+        <img src="./img/illustration_left.png" alt="左側チケット">
+      </div>
+
+      <div class="right">
+        <img src="./img/illustration_right.png" alt="右側チケット">
+
+        <!-- 右側画像の上に縦書きで情報（もぎり前） -->
+        <div class="ticket-info-overlay-right">
+          <div id="ovCircleName"></div>
+          <div id="ovPn"></div>
+          <div id="ovSpace"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="ticketText">サークル入場チケット</div>
+    <div id="message">タップ／クリックしてください</div>
+
+    <!-- もぎり後に “元々テキストがあった位置” に差し込む -->
+    <div id="afterArea"></div>
+
+    <!-- 半券などの結果表示 -->
+    <div id="result"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    目吹く恋の花水木 実行委員会
+  </footer>
+
+</body>
+</html>

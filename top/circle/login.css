@@ -1,0 +1,127 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+  background-image: url("../img/hoshi_washi_texture.png");
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ヘッダー */
+.site-header {
+  width: 100%;
+  background: rgb(255, 252, 244);
+  background-image: url("../img/hoshi_washi_texture.png");
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-small {
+  height: 60px;
+}
+
+.header-text {
+  color: #1b2a52;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-text .main-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* main */
+.main {
+  flex: 1;
+  max-width: 600px;
+  margin: 120px auto 60px;
+  padding: 20px;
+  background: rgba(253,253,253,0.9);
+  border-radius: 12px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* カード（フォーム枠） */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  background: #4a90e2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.error {
+  color: #d9534f;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* フッター */
+.site-footer {
+  width: 100%;
+  background: rgba(133, 0, 66, 0.9);
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  color: #f3fdff;
+}
+
+/* 桜エフェクト */
+.sakura-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+}

@@ -1,0 +1,177 @@
+/* ============================
+   全体レイアウト
+============================ */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+
+  background-color: #fdfdfd;
+  background-image: url("../img/hoshi_washi_texture.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ============================
+   ヘッダー
+============================ */
+.site-header {
+  width: 100%;
+  background: rgb(255, 252, 244);
+  background-image: url("../img/hoshi_washi_texture.png");
+  background-size: cover;
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  font-family: "Noto Serif JP", serif;
+
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-small {
+  height: 60px;
+}
+
+.header-text {
+  color: #1b2a52;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.header-text .main-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ============================
+   main 枠
+============================ */
+.main {
+  flex: 1;
+  max-width: 600px;
+  margin: 120px auto 60px;
+  padding: 20px;
+  background: rgba(253,253,253,0.9);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   チケット
+============================ */
+.ticket-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.left, .right {
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.left img, .right img {
+  height: 150px;
+  width: auto;
+}
+
+.torn .left {
+  transform: translateX(-200px) rotate(-10deg);
+  opacity: 0;
+}
+
+.torn .right {
+  transform: translateX(200px) rotate(10deg);
+  opacity: 0;
+}
+
+#ticketText {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #0a0044;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+#result {
+  margin-top: 30px;
+  font-size: 18px;
+  color: #1b2a52;
+}
+
+#result img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* ============================
+   桜エフェクト
+============================ */
+.sakura-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.sakura {
+  position: absolute;
+  animation-name: sakura-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes sakura-fall {
+  0% { transform: translate3d(0, -10vh, 0) rotateZ(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translate3d(-40vw, 110vh, 0) rotateZ(360deg); opacity: 0; }
+}
+
+/* ============================
+   フッター
+============================ */
+.site-footer {
+  width: 100%;
+  background: rgba(133, 0, 66, 0.9);
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #f3fdff;
+  font-family: "Noto Serif JP", serif;
+
+}
