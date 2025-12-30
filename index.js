@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const now = new Date();
 
   if (now >= start && now <= end) {
-    location.href = "./transition/transition.html";
+    location.href = "./top/transition/transition.html";
     return;
   }
 
@@ -74,7 +74,7 @@ setTimeout(() => {
     shoji.classList.add("open");
 
     setTimeout(() => {
-      location.href = "./transition/transition.html";
+      location.href = "./top/transition/transition.html";
     }, 1000);
 
   }, 1000); // ← 追加した 1 秒待機

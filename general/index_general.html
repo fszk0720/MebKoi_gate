@@ -6,30 +6,54 @@
   <link rel="stylesheet" href="./ticket.css">
   <script src="./ticket.js" defer></script>
 </head>
+
 <body>
-  <h1>一般参加者チケット</h1>
-  <div id="opening">✨ ローディング中... ✨</div>
 
-  <!-- チケット本体 -->
-  <div id="ticket" class="ticket-wrapper">
-    <div class="left">
-      <img src="illustration_left.png" alt="左側イラスト">
+  <!-- ヘッダー（top と同じ） -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="./img/logo.png" class="logo-small">
+      <div class="header-text">
+        <div>年越し父水Webオンリーイベント</div>
+        <div>in とらのあなマルシェ</div>
+        <div class="main-title">目吹く恋の花水木</div>
+        <div>開催期間：2025/12/31 22:00〜2026/1/2 21:59</div>
+      </div>
     </div>
-    <div class="right">
-      <img src="illustration_right.png" alt="右側イラスト">
+  </header>
+
+  <!-- 桜エフェクト -->
+  <div class="sakura-container"></div>
+
+  <!-- main 枠 -->
+  <main class="main">
+
+    <h1 class="page-title">一般参加者チケット</h1>
+
+    <!-- チケット本体 -->
+    <div id="ticket" class="ticket-wrapper">
+      <div class="left">
+        <img src="./illustration_left.png" alt="左側イラスト">
+      </div>
+      <div class="right">
+        <img src="./illustration_right.png" alt="右側イラスト">
+      </div>
     </div>
-  </div>
-  <div id="ticketText">一般参加者チケット</div>
 
-  <!-- 案内メッセージ -->
-  <div id="message">👉 2秒後に表示：タップ／クリックしてね！</div>
+    <div id="ticketText">一般参加者チケット</div>
 
-  <!-- 結果表示 -->
-  <div id="result"></div>
+    <!-- 案内メッセージ -->
+    <div id="message">タップ／クリックしてください</div>
 
-  <!-- テスト用リセットボタン -->
-  <button onclick="resetTicketFlag()" style="margin-top:20px;">
-    🔄 入場履歴をリセット（テスト用）
-  </button>
+    <!-- 結果表示 -->
+    <div id="result"></div>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    目吹く恋の花水木 実行委員会
+  </footer>
+
 </body>
 </html>
