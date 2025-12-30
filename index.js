@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const start = new Date(2025, 11, 30, 10, 0, 0);
+  const start = new Date(2025, 11, 30, 10, 12, 0);
   const end   = new Date(2026, 0, 2, 21, 59, 59);
 
   const now = new Date();
 
   if (now >= start && now <= end) {
-    location.href = "./top/transition/transition.html";
+    location.href = "../top/transition/transition.html";
     return;
   }
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function startCountdown() {
 
-  const eventStart = new Date(2025, 11, 30, 10, 0, 0);
+  const eventStart = new Date(2025, 11, 30, 10, 12, 0);
 
   function update() {
     const now = new Date();
@@ -74,7 +74,7 @@ setTimeout(() => {
     shoji.classList.add("open");
 
     setTimeout(() => {
-      location.href = "./top/transition/transition.html";
+      location.href = "../top/transition/transition.html";
     }, 1000);
 
   }, 1000); // ← 追加した 1 秒待機
