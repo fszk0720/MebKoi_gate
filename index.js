@@ -1,29 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const start = new Date(2025, 11, 30, 10, 30, 0);
+  const start = new Date(2025, 11, 30, 10, 35, 0);
   const end   = new Date(2026, 0, 2, 21, 59, 59);
 
-  const now = new Date();
+  // ★ GitHub Pages で即リダイレクトされる原因を削除
+  // const now = new Date();
+  // if (now >= start && now <= end) {
+  //   location.href = "./top/transition/transition.html";
+  //   return;
+  // }
 
-  if (now >= start && now <= end) {
-    location.href = "./top/transition/transition.html";
-    return;
-  }
-
+  // ★ カウントダウン画面を表示
   document.getElementById("countdown-screen").classList.remove("hidden");
-  startCountdown();
+  startCountdown(start, end);
 });
 
 
-function startCountdown() {
-
-  const eventStart = new Date(2025, 11, 30, 10, 30, 0);
+function startCountdown(start, end) {
 
   function update() {
     const now = new Date();
-    const diff = eventStart - now;
+    const diff = start - now;
 
-    // ★ 0秒になった瞬間に障子演出へ
+    // ★ 0秒になった瞬間に障子演出へ（ここで判定する）
     if (diff <= 0 && !window.effectStarted) {
       window.effectStarted = true;
       startShojiEffect();
@@ -49,36 +48,29 @@ function startCountdown() {
 
 
 // ===============================
-// ★ 障子だけの演出
+// ★ 障子だけの演出（変更なし）
 // ===============================
 function startShojiEffect() {
   const shoji = document.getElementById("shoji");
   const blackout = document.getElementById("blackout");
 
-  // ★ まず障子を表示（display:none → flex）
   shoji.style.display = "flex";
-
-  // 障子を閉じる
   shoji.classList.add("close");
 
-setTimeout(() => {
-
-  // ★ 閉じきった瞬間に黒フェード
-  blackout.classList.remove("hidden");
-
-  // ★ ここで 1 秒待つ（閉じたまま停止）
   setTimeout(() => {
 
-    // ★ 1 秒後に開く
-    shoji.classList.remove("close");
-    shoji.classList.add("open");
+    blackout.classList.remove("hidden");
 
     setTimeout(() => {
-      location.href = "./top/transition/transition.html";
+
+      shoji.classList.remove("close");
+      shoji.classList.add("open");
+
+      setTimeout(() => {
+        location.href = "./top/transition/transition.html";
+      }, 1000);
+
     }, 1000);
 
-  }, 1000); // ← 追加した 1 秒待機
-
-}, 1000); // ← 閉じるアニメーション時間
-
+  }, 1000);
 }
