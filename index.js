@@ -1,3 +1,11 @@
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    // ★ BFCache から復元された場合は強制リロード
+    window.location.reload();
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // ★ 前回の状態を必ずリセット
