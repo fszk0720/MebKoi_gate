@@ -1,17 +1,9 @@
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    // ★ BFCache から復元された場合は強制リロード
-    window.location.reload();
-  }
-});
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
   // ★ 前回の状態を必ずリセット
   window.effectStarted = false;
 
-  const start = new Date(2025, 11, 30, 10, 50, 0);
+  const start = new Date(2025, 11, 30, 11, 20, 0);
   const end   = new Date(2026, 0, 2, 21, 59, 59);
 
   // ★ GitHub Pages で即リダイレクトされる原因を削除
