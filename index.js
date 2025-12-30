@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const now = new Date();
 
   if (now >= start && now <= end) {
-    location.href = "../top/transition/transition.html";
+    location.href = "./top/transition/transition.html";
     return;
   }
 
