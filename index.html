@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>カウントダウン</title>
-  <link rel="stylesheet" href="./countdown.css">
+
+  <!-- ★ キャッシュさせないメタタグ -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- ★ CSS にバージョンを付ける -->
+  <link rel="stylesheet" href="./countdown.css?v=20251230">
 </head>
 
 <body>
@@ -21,7 +28,6 @@
   </header>
 
   <div id="countdown-screen" class="hidden">
-
     <div class="visual-wrapper">
       <div class="main-bg">
         <img src="./img/main-visual.png" class="main-visual">
@@ -47,6 +53,7 @@
     <div class="shoji-right"></div>
   </div>
 
-  <script src="./index.js"></script>
+  <!-- ★ JS にもバージョンを付けてキャッシュを切る -->
+  <script src="./index.js?v=20251230" defer></script>
 </body>
 </html>
