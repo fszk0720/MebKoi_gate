@@ -8,19 +8,27 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+
+  background-color: #fdfdfd;
   background-image: url("./img/hoshi_washi_texture.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-attachment: fixed;
 }
 
-/* ヘッダー */
+/* ============================
+   ヘッダー
+============================ */
 .site-header {
   width: 100%;
   background: rgb(255, 252, 244);
   background-image: url("./img/hoshi_washi_texture.png");
+  background-size: cover;
   padding: 12px 20px;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
   font-family: "Noto Serif JP", serif;
 
