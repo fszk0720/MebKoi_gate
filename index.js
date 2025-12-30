@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const start = new Date(2025, 11, 30, 10, 35, 0);
+  // ★ 前回の状態を必ずリセット
+  window.effectStarted = false;
+
+  const start = new Date(2025, 11, 30, 10, 45, 0);
   const end   = new Date(2026, 0, 2, 21, 59, 59);
 
   // ★ GitHub Pages で即リダイレクトされる原因を削除
